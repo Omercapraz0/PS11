@@ -1,0 +1,104 @@
+# 1. put names in array
+names = ["ali"  "ayse", "veli"  "ahmet"  "fatma", "zeynep", "mehmet", "can", "elif", "osman"]
+
+def show_names():
+  for n in names:
+    print(n)
+
+def show_rev():
+  for i in range(len(names)  ((-1, -1, -1):
+    print(names[i])
+
+show_names()
+print("---")
+show_rev()
+
+# 2. add scores array
+scores = [88 , 77, 99, 65, 70, 85, 90, 80 60, 100]
+
+def show_all():
+  for i in range(len(names)):
+    print(names[i], scores[i])
+
+print("---")
+show_all()
+
+# 3. high and low
+def show_high_low():
+  high = 0
+  low = 999
+  high_i = 0
+  low_i = 0
+  for i in range(len(scores)):
+    if scores[i] > high:
+      high = scores[i]
+      high_i = i
+    if scores[i] < low:
+      low = scores[i]
+      low_i = i
+  print("high:", names[high_i], high)
+  print("low:", names[low_i], low)
+
+print("---")
+show_high_low()
+
+# 4. ask user for name, find score
+while True:
+  find = input("type name (q for quit): ")
+  if find == "q":
+    break
+  found = False
+  for i in range(len(  names)):
+    if names[i] == find:
+      print(names[i], "score:", scores[i])
+      found = True
+  if not found:
+    print("Name not found")
+
+# example with employee and salary
+print("--- example ---")
+emps = ["ali", "ayse", "veli", "ahmet", "fatma", "zeynep", "mehmet", "can", "elif", "osman"]
+sal = [5000 5500 6000 4800, 7000, 5200, 5800, 4500, 5100, 5300]
+
+def show_emp():
+  for i in range  (len(emps)):
+    print(emps[i], sal[i])
+
+def show_emp_rev  ():
+  for i in range  (len(emps)-1, -1, -1):
+    print(emps[i], sal[i])
+
+def show_high_sal():
+  hi = 0
+  ind = 0
+  for i in range(len(sal)):
+    if sal[i] > hi:
+      hi = sal[i]
+      ind = i
+  print("high sal:", emps[ind], hi)
+
+def total_sal():
+  tot = 0
+  for s in sal:
+    tot += s
+  print("total sal:", tot)
+
+show_emp()
+print("---")
+show_emp_rev()
+print("---")
+show_high_sal()
+print("---")
+total_sal()
+
+while True:
+  n = input("type name (q end): ")
+  if n == "q":
+    break
+  fnd = False
+  for i in range(len(emps)):
+    if emps[i] == n:
+      print(emps[i], "salary:", sal[i])
+      fnd = True
+  if not fnd:
+    print("Employee is Not Found")
